@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zeiterfassung</title>
+    <style>
+        /* Fügen Sie hier Ihren gewünschten CSS-Stil hinzu */
+    </style>
+</head>
+<body>
+    <div id="loginScreen">
+        <h2>Anmelden</h2>
+        <!-- Hier können Sie die Anmeldedaten abfragen -->
+        <button onclick="showMainView()">Anmelden</button>
+    </div>
+    
+    <div id="mainView" style="display: none;">
+        <h2>Zeiterfassung</h2>
+        <button onclick="startTimer()">Start</button>
+        <button onclick="stopTimer()">Stop</button>
+        <button onclick="saveTime()">Speichern</button>
+    </div>
+    
+    <div id="timeList" style="display: none;">
+        <h2>Zeitübersicht</h2>
+        <ul id="timeEntries"></ul>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
