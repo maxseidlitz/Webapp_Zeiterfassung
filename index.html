@@ -1,30 +1,80 @@
+Natürlich! Hier ist eine aktualisierte Version des HTML-Frontends, die das Aussehen einer App im Vollbildmodus nachahmt und den gesamten Bildschirm einnimmt.
+
+```html
 <!DOCTYPE html>
 <html>
 <head>
     <title>Zeiterfassung</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* Fügen Sie hier Ihren gewünschten CSS-Stil hinzu */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-screen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .main-view,
+        .time-list {
+            display: none;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .main-view button,
+        .time-list ul {
+            margin-top: 20px;
+        }
+
+        .time-list li {
+            list-style-type: none;
+        }
     </style>
 </head>
 <body>
-    <div id="loginScreen">
-        <h2>Anmelden</h2>
-        <!-- Hier können Sie die Anmeldedaten abfragen -->
-        <button onclick="showMainView()">Anmelden</button>
+    <div class="container">
+        <div class="login-screen">
+            <h2>Anmelden</h2>
+            <!-- Hier können Sie die Anmeldedaten abfragen -->
+            <button onclick="showMainView()">Anmelden</button>
+        </div>
+
+        <div class="main-view">
+            <h2>Zeiterfassung</h2>
+            <button onclick="startTimer()">Start</button>
+            <button onclick="stopTimer()">Stop</button>
+            <button onclick="saveTime()">Speichern</button>
+        </div>
+
+        <div class="time-list">
+            <h2>Zeitübersicht</h2>
+            <ul id="timeEntries"></ul>
+        </div>
     </div>
-    
-    <div id="mainView" style="display: none;">
-        <h2>Zeiterfassung</h2>
-        <button onclick="startTimer()">Start</button>
-        <button onclick="stopTimer()">Stop</button>
-        <button onclick="saveTime()">Speichern</button>
-    </div>
-    
-    <div id="timeList" style="display: none;">
-        <h2>Zeitübersicht</h2>
-        <ul id="timeEntries"></ul>
-    </div>
-    
+
     <script src="script.js"></script>
 </body>
 </html>
+```
+
+Diese Version des Frontends verwendet eine Container-Div, um das Layout zu zentrieren und den Inhalt vertikal zu zentrieren. Die CSS-Stile stellen sicher, dass die Ansichten (Login, Hauptansicht und Zeitübersicht) den gesamten Bildschirm ausfüllen.
+
+Bitte beachten Sie, dass Sie den CSS-Stil an Ihre spezifischen Designanforderungen anpassen können, indem Sie Farben, Schriftarten, Abstände und andere Eigenschaften anpassen.
