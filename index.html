@@ -3,62 +3,35 @@
 <head>
     <title>Zeiterfassung</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .login-screen {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .main-view,
-        .time-list {
-            display: none;
-            width: 100%;
-            padding: 20px;
-        }
-
-        .main-view button,
-        .time-list ul {
-            margin-top: 20px;
-        }
-
-        .time-list li {
-            list-style-type: none;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <div class="login-screen">
+        <div class="login-screen" id="loginscreen">
             <h2>Anmelden</h2>
             <!-- Hier können Sie die Anmeldedaten abfragen -->
             <button onclick="showMainView()">Anmelden</button>
         </div>
 
-        <div class="main-view">
+        <div class="main-view" id="mainview">
             <h2>Zeiterfassung</h2>
-            <button onclick="startTimer()">Start</button>
-            <button onclick="stopTimer()">Stop</button>
-            <button onclick="saveTime()">Speichern</button>
+            <div id="time">
+                <span class="digit" id="hr">
+                    00</span>
+                <span class="txt">Hr</span>
+                <span class="digit" id="min">
+                    00</span>
+                <span class="txt">Min</span>
+                <span class="digit" id="sec">
+                    00</span>
+                <span class="txt">Sec</span>
+                <span class="digit" id="count">
+                    00</span>
+            </div>
+            <button onclick="startTimer()" id="start">Start</button>
+            <button onclick="stopTimer()" id="stop">Stop</button>
+            <button id="reset">Reset</button>
+            <button onclick="saveTime()" id="safe">Speichern</button>
         </div>
 
         <div class="time-list">
